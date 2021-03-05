@@ -70,6 +70,10 @@ resource "google_storage_bucket" "website" {
     log_bucket        = google_storage_bucket.access_logs.name
     log_object_prefix = var.access_log_prefix != "" ? var.access_log_prefix : local.website_domain_name_dashed
   }
+
+  lifecycle {
+    create_before_destroy = var.terraform_lifecycle_create_before_destroy
+  }
 }
 
 # ------------------------------------------------------------------------------
