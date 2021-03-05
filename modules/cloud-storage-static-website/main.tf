@@ -72,7 +72,7 @@ resource "google_storage_bucket" "website" {
   }
 
   lifecycle {
-    create_before_destroy = var.terraform_lifecycle_create_before_destroy
+    create_before_destroy = true
   }
 }
 
