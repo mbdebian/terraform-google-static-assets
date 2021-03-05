@@ -143,7 +143,7 @@ variable "custom_labels" {
   default     = {}
 }
 
-// WARNING - Only literal values are allowed in lifecycle meta-argument, as it affects the graph construction
+// WARNING - Only literal values are allowed in lifecycle meta-argument, as it affects the graph construction, see https://www.terraform.io/docs/language/meta-arguments/lifecycle.html
 /*variable "terraform_lifecycle_create_before_destroy" {
   description = "If set to true, terraform will create the new storage before destroying the existing one. This is particulary useful in situations where we want to update the static website content but, avoiding any downtime to the user."
   type        = bool
